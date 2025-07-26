@@ -1,21 +1,29 @@
-# M365 Expert Access - Freelancer Support Services
+# easym365.de - M365 Expert Access Services
 
-**Erstellt am:** 26. Juli 2025, 07:10 CET  
-**Letzte Aktualisierung:** 26. Juli 2025, 07:10 CET
+**Erstellt am:** 26. Juli 2025, 07:25 CET  
+**Letzte Aktualisierung:** 26. Juli 2025, 07:25 CET  
+**Live Website:** https://efdgeoxx.manus.space
 
 ## Überblick
 
-M365 Expert Access ist ein ehrliches, SLA-freies Support-Service-Modell für Microsoft 365, entwickelt für Freelancer und kleine IT-Dienstleister. Das Konzept basiert auf realistischen Erwartungen und transparenter Kommunikation.
+Vollständige easym365.de Website mit integrierten M365 Expert Access Services. Diese Website kombiniert die ursprünglichen easym365-Services mit dem neuen ehrlichen, SLA-freien Support-Service-Modell für Microsoft 365.
 
 ## Dateien in diesem Repository
 
-### Website
-- `index.html` - Hauptwebsite für M365 Expert Access Service
+### Website-Dateien
+- `easym365_final_website.html` - **HAUPTWEBSITE**: Vollständige easym365.de mit integrierten M365 Expert Access Services
+- `index.html` - Standalone M365 Expert Access Website
 
 ### Service-Dokumentation
 - `m365_hotline_no_sla.md` - Detaillierte Beschreibung des SLA-freien Hotline-Services
 - `m365_it_support_realistic.md` - Realistische IT-Support Services für interne Teams
 - `zero_trust_startup_service.md` - Zero Trust Assessment und Start-up Begleitung
+
+## Live-Zugang
+
+**🌐 Hauptwebsite:** https://efdgeoxx.manus.space/easym365_final_website.html  
+**📞 M365 Expert Access:** https://efdgeoxx.manus.space/index.html  
+**📋 GitHub Repository:** https://github.com/farpoint-tech/easym365-expert-access
 
 ## Service-Pakete
 
