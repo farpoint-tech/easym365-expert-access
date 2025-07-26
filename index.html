@@ -3,1626 +3,1141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>easym365.de - Microsoft 365 Solution Architect & Security Specialist</title>
-    <meta name="description" content="Philipp Schmidt - Microsoft 365 Solution Architect mit über 20 Jahren Expertise. Spezialisiert auf Entra ID, Intune Device Management und Security für gehobene KMU.">
-    <meta name="keywords" content="Microsoft 365, Entra ID, Intune, Security, Compliance, NIS2, TISAX, Zero Trust, Solution Architect">
+    <title>Philipp Schmidt - Microsoft 365 Solution Architect & Security Specialist | easym365.de</title>
+    <meta name="description" content="Microsoft 365 Solution Architect mit 20+ Jahren Expertise. Spezialisiert auf Entra ID, Intune, Security und Zero Trust für sicherheitsorientierte KMU.">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            min-height: 100vh;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
+        /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            padding: 15px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
-            font-size: 28px;
+            color: #fbbf24;
+            font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-        
-        .nav a {
-            color: #1e3c72;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
         }
-        
-        .nav a:hover {
-            color: #ff6b35;
-        }
-        
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            transition: width 0.3s ease;
-        }
-        
-        .nav a:hover::after {
-            width: 100%;
-        }
-        
+
         .nav-button {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 10px 20px;
+            background: #fbbf24;
+            color: #1e3a8a;
+            padding: 0.5rem 1rem;
             border: none;
-            border-radius: 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
-        
+
         .nav-button:hover {
+            background: #f59e0b;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
         }
-        
+
+        /* Hero Section */
         .hero {
             padding: 120px 0 80px;
             text-align: center;
             color: white;
-            position: relative;
-            overflow: hidden;
         }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat center center;
-            background-size: cover;
-            opacity: 0.3;
-        }
-        
+
         .hero-content {
-            position: relative;
-            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
         }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, #f0f8ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            opacity: 0.95;
-            font-weight: 500;
-        }
-        
-        .hero-description {
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-        
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
+
+        .hero-text h1 {
             font-size: 2.5rem;
-            font-weight: bold;
-            color: #ff6b35;
-            display: block;
+            margin-bottom: 1rem;
+            color: #fbbf24;
         }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
+
+        .hero-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #e5e7eb;
         }
-        
-        .hero-cta {
-            display: inline-flex;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .cta-primary {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 30px;
+
+        .hero-text p {
             font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+            margin-bottom: 2rem;
+            color: #d1d5db;
         }
-        
-        .cta-secondary {
+
+        .hero-card {
             background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 15px 30px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
-        .cta-primary:hover, .cta-secondary:hover {
+
+        .hero-card h3 {
+            color: #fbbf24;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-card .tagline {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: #fbbf24;
+            color: #1e3a8a;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: #f59e0b;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
         }
-        
-        .main-content {
+
+        /* Services Section */
+        .services {
             background: white;
-            margin-top: -50px;
-            border-radius: 20px 20px 0 0;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .section {
             padding: 80px 0;
         }
-        
-        .section:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
+
         .section-title {
-            font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 20px;
-            color: #1e3c72;
-            position: relative;
-            font-weight: 700;
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 3rem;
         }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            border-radius: 2px;
-        }
-        
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
-        
+
         .service-card {
             background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            border: 1px solid #f0f0f0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-        }
-        
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-            color: white;
-            font-size: 28px;
-            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
-        }
-        
-        .service-title {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            color: #1e3c72;
-            font-weight: 600;
-        }
-        
-        .service-description {
-            color: #666;
-            margin-bottom: 25px;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-        
-        .service-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        
-        .service-features li {
-            padding: 10px 0;
-            position: relative;
-            padding-left: 30px;
-            color: #555;
-            font-size: 0.95rem;
-        }
-        
-        .service-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #28a745;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .price-tag {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
-        }
-        
-        .price-individual {
-            background: linear-gradient(45deg, #6c757d, #495057);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-        }
-        
-        .service-cta {
-            background: #1e3c72;
-            color: white;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e5e7eb;
             transition: all 0.3s ease;
-            display: inline-block;
-            font-size: 1rem;
-        }
-        
-        .service-cta:hover {
-            background: #2a5298;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-left: 5px solid #ff6b35;
-            padding: 30px;
-            margin: 40px 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .highlight-title {
-            color: #1e3c72;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .package-card {
-            background: white;
-            border-radius: 20px;
-            padding: 50px 40px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            border: 2px solid #f0f0f0;
             position: relative;
             overflow: hidden;
         }
-        
-        .package-card.featured {
-            border-color: #ff6b35;
-            transform: scale(1.05);
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #fbbf24;
         }
-        
-        .package-card.featured::before {
-            content: 'BELIEBT';
+
+        .service-card.featured {
+            border-color: #fbbf24;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        }
+
+        .service-card.featured::before {
+            content: "EMPFOHLEN";
             position: absolute;
-            top: 20px;
+            top: 15px;
             right: -30px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 8px 40px;
+            background: #fbbf24;
+            color: #1e3a8a;
+            padding: 5px 40px;
             font-size: 0.8rem;
             font-weight: bold;
             transform: rotate(45deg);
         }
-        
-        .package-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+
+        .service-card h3 {
+            color: #1e3a8a;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
-        
-        .package-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-        
-        .package-title {
-            font-size: 2rem;
-            color: #1e3c72;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        
-        .package-price {
-            font-size: 3rem;
-            color: #ff6b35;
+
+        .service-card .price {
+            color: #fbbf24;
+            font-size: 1.8rem;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
         }
-        
-        .package-price-note {
-            color: #666;
+
+        .service-card .price-note {
+            color: #6b7280;
             font-size: 0.9rem;
-            margin-bottom: 30px;
+            margin-bottom: 1.5rem;
         }
-        
-        .package-description {
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.7;
-        }
-        
-        .package-features {
+
+        .service-card ul {
             list-style: none;
-            margin-bottom: 40px;
+            margin-bottom: 2rem;
         }
-        
-        .package-features li {
-            padding: 12px 0;
+
+        .service-card li {
+            padding: 0.5rem 0;
             position: relative;
-            padding-left: 30px;
-            color: #555;
-            border-bottom: 1px solid #f0f0f0;
+            padding-left: 1.5rem;
         }
-        
-        .package-features li:last-child {
-            border-bottom: none;
-        }
-        
-        .package-features li::before {
-            content: '✓';
+
+        .service-card li::before {
+            content: "✓";
             position: absolute;
             left: 0;
-            color: #28a745;
+            color: #10b981;
             font-weight: bold;
-            font-size: 1.2rem;
         }
-        
-        .package-cta {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
+
+        .service-button {
+            background: #1e3a8a;
             color: white;
-            padding: 16px 32px;
+            padding: 0.8rem 1.5rem;
             border: none;
-            border-radius: 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: 600;
+            display: inline-block;
             transition: all 0.3s ease;
-            display: block;
+            width: 100%;
             text-align: center;
-            font-size: 1.1rem;
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
         }
-        
-        .package-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+
+        .service-button:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
         }
-        
-        .comparison-table {
+
+        .service-button.featured {
+            background: #fbbf24;
+            color: #1e3a8a;
+        }
+
+        .service-button.featured:hover {
+            background: #f59e0b;
+        }
+
+        /* Package Deals Section */
+        .packages {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
             background: white;
             border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 60px 0;
-        }
-        
-        .comparison-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .comparison-table th {
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 20px;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .comparison-table td {
-            padding: 15px 20px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .comparison-table tr:hover {
-            background: #f8f9fa;
-        }
-        
-        .check-mark {
-            color: #28a745;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .about-section {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
             text-align: center;
         }
-        
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-card.featured {
+            border-color: #fbbf24;
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        }
+
+        .package-card h3 {
+            color: #1e3a8a;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .package-card .package-price {
+            color: #fbbf24;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-card .package-subtitle {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        /* About Section */
+        .about {
+            background: #1e3a8a;
+            color: white;
+            padding: 80px 0;
+        }
+
         .about-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            margin-top: 60px;
-        }
-        
-        .about-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .about-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #ff6b35;
-        }
-        
-        .about-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: white;
-        }
-        
-        .about-card p {
-            opacity: 0.9;
-            line-height: 1.7;
-        }
-        
-        .certifications {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-        
-        .cert-badge {
-            background: white;
-            border: 2px solid #1e3c72;
-            border-radius: 15px;
-            padding: 25px 20px;
-            text-align: center;
-            font-weight: 600;
-            color: #1e3c72;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .cert-badge:hover {
-            background: #1e3c72;
-            color: white;
-            transform: translateY(-5px);
-        }
-        
-        .contact-section {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            text-align: center;
-        }
-        
-        .contact-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
-        .contact-info {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 24px;
         }
-        
-        .footer {
-            background: #1a1a1a;
+
+        .about-text h2 {
+            color: #fbbf24;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #d1d5db;
+        }
+
+        .certifications {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .certifications h3 {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .cert-list {
+            list-style: none;
+        }
+
+        .cert-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #1e3a8a;
             color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #1e40af;
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            color: #4b5563;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #fbbf24;
+            padding: 60px 0;
             text-align: center;
+        }
+
+        .contact h2 {
+            color: #1e3a8a;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: #1e3a8a;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-button {
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #1e40af;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e3a8a;
+            color: white;
             padding: 40px 0;
+            text-align: center;
         }
-        
+
         .footer p {
-            opacity: 0.8;
-            margin-bottom: 10px;
+            color: #d1d5db;
         }
-        
-        .mobile-menu {
-            display: none;
-        }
-        
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
-            
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
+
+            .hero-text h1 {
+                font-size: 2rem;
             }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .services-grid, .packages-grid {
+
+            .about-content {
                 grid-template-columns: 1fr;
             }
-            
-            .nav {
-                display: none;
+
+            .services-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .mobile-menu {
-                display: block;
-                background: none;
-                border: none;
-                color: #1e3c72;
-                font-size: 24px;
+
+            .package-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
+
             .package-card.featured {
                 transform: none;
             }
-            
-            .package-card.featured:hover {
-                transform: translateY(-10px);
-            }
         }
-        
-        .scroll-to-top {
+
+        /* Scroll to top button */
+        .scroll-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
+            bottom: 20px;
+            right: 20px;
+            background: #fbbf24;
+            color: #1e3a8a;
             border: none;
             border-radius: 50%;
             width: 50px;
             height: 50px;
-            font-size: 20px;
             cursor: pointer;
-            opacity: 0;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
-            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
         }
-        
-        .scroll-to-top.visible {
+
+        .scroll-top.visible {
             opacity: 1;
+            visibility: visible;
         }
-        
-        .scroll-to-top:hover {
+
+        .scroll-top:hover {
+            background: #f59e0b;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: #fef3c7;
+            border: 2px solid #fbbf24;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #92400e;
+        }
+
+        .warning-box strong {
+            color: #78350f;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">easym365.de</div>
-                <nav class="nav">
-                    <a href="#services">Services</a>
-                    <a href="#packages">Pakete</a>
-                    <a href="#about">Über mich</a>
-                    <a href="#contact">Kontakt</a>
-                </nav>
+                <a href="#" class="logo">easym365.de</a>
                 <a href="mailto:ps@farpoint.tech" class="nav-button">Hauptseite/Impressum</a>
-                <button class="mobile-menu">☰</button>
             </div>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Microsoft 365 Security Excellence</h1>
-                <p class="hero-subtitle">Ihr Experte für sichere und compliant Microsoft 365 Umgebungen</p>
-                <p class="hero-description">
-                    Als Microsoft Expert Level zertifizierter Solution Architect mit über 20 Jahren IT-Expertise 
-                    unterstütze ich gehobene KMU bei der sicheren Transformation zu modernen Arbeitsplätzen. 
-                    Spezialisiert auf Entra ID, Intune Device Management und Zero Trust Security-Architekturen.
-                </p>
-                
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Jahre Expertise</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">Expert</span>
-                        <span class="stat-label">Level Zertifiziert</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label">Erfolgreiche Projekte</span>
-                    </div>
+                <div class="hero-text">
+                    <h1>Maßgeschneiderte Microsoft 365 Lösungen für sicherheitsorientierte KMU</h1>
+                    <h2>MS365 Solution Architect & Security Specialist</h2>
+                    <p>Erschließen Sie das volle Potenzial Ihres Unternehmens mit maßgeschneiderten Microsoft 365 Konfigurationen, die ich speziell auf Ihre Anforderungen anpasse, um Ihre Abläufe zu optimieren und Ihren Erfolg voranzutreiben.</p>
+                    <a href="mailto:ps@farpoint.tech?subject=Strategiegespräch%20Anfrage" class="cta-button">Kontaktieren Sie mich noch heute!</a>
                 </div>
-                
-                <div class="hero-cta">
-                    <a href="#services" class="cta-primary">Services entdecken</a>
-                    <a href="#contact" class="cta-secondary">Kostenlose Beratung</a>
+                <div class="hero-card">
+                    <h3>Philipp Schmidt</h3>
+                    <div class="tagline">TAILORED M365 SOLUTIONS, SIMPLY DELIVERED</div>
+                    <p>Ihr Weg zur digitalen Exzellenz: Agil. Ganzheitlich. Zukunftssicher.</p>
+                    <a href="#services" class="cta-button">Services entdecken</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <main class="main-content">
-        <!-- Assessment & Consulting Services -->
-        <section id="services" class="section">
-            <div class="container">
-                <h2 class="section-title">Assessment & Consulting Services</h2>
-                <p class="section-subtitle">
-                    Strategische Beratung und umfassende Bewertung Ihrer Microsoft 365 Sicherheitslandschaft
+
+    <!-- Assessment & Consulting Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Assessment & Consulting Services</h2>
+            <div class="services-grid">
+                <!-- Digitalisierungsstrategiegespräch -->
+                <div class="service-card">
+                    <h3>Digitalisierungsstrategiegespräch</h3>
+                    <div class="price">ab 399€</div>
+                    <div class="price-note">120 Minuten persönliches Strategiegespräch</div>
+                    <ul>
+                        <li>120 Minuten persönliches Strategiegespräch auf Wunsch vor Ort</li>
+                        <li>Anfahrt bis zu 50km inklusive</li>
+                        <li>Individuelles Strategiepapier mit konkreten Vorschlägen</li>
+                        <li>Maßgeschneidertes Digitalisierungsangebot</li>
+                        <li>Kein Abnahmezwang - Sie entscheiden frei</li>
+                        <li>Fokus auf Cloud und SaaS Lösungen</li>
+                        <li>Berücksichtigung Ihres konkreten Bedarfs</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Strategiegespräch%20Anfrage" class="service-button">Strategiegespräch buchen</a>
+                </div>
+
+                <!-- Microsoft 365 Security Health Check -->
+                <div class="service-card">
+                    <h3>Microsoft 365 Security Health Check</h3>
+                    <div class="price">ab 999€</div>
+                    <div class="price-note">Umfassende Sicherheitsbewertung Ihres M365 Tenants</div>
+                    <ul>
+                        <li>Vollständige M365 Best Practice Analysis</li>
+                        <li>Sicherheitslücken-Identifikation und Risikobewertung</li>
+                        <li>CIS/NIST Compliance-Check und Bewertung</li>
+                        <li>Benutzer- und Berechtigungsanalyse komplett</li>
+                        <li>Detaillierter Bericht mit priorisierten Handlungsempfehlungen</li>
+                        <li>30-minütige Ergebnispräsentation inklusive</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Security%20Health%20Check%20Anfrage" class="service-button">Health Check anfragen</a>
+                </div>
+
+                <!-- AI-Executive-Reports -->
+                <div class="service-card featured">
+                    <h3>Assessment-Begleitung mit AI-Executive-Reports</h3>
+                    <div class="price">ab 499€</div>
+                    <div class="price-note">KI-generierte Executive Deliverables</div>
+                    <ul>
+                        <li>AI-generierte Executive Summary für C-Level</li>
+                        <li>Automatisierte PowerBI Dashboards</li>
+                        <li>Business Case Präsentationen</li>
+                        <li>ROI-Kalkulationen und Kosteneinsparungen</li>
+                        <li>Compliance-Reports für Auditoren</li>
+                        <li>Maßgeschneiderte Stakeholder-Kommunikation</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=AI%20Executive%20Reports%20Anfrage" class="service-button featured">AI-Reports anfragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- M365 Expert Access Service -->
+    <section class="services" style="background: #f8f9fa; padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">M365 Expert Access - Ongoing Support</h2>
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <p style="font-size: 1.3rem; color: #6b7280; max-width: 800px; margin: 0 auto;">
+                    Direkter Zugang zum M365-Experten - ohne SLA-Theater, ohne Call-Center-Warteschleifen.<br>
+                    <strong>Sie rufen an, ich rufe zurück mit der Lösung.</strong>
+                </p>
+            </div>
+
+            <!-- Ehrlichkeits-Banner -->
+            <div style="background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1e3a8a; border-radius: 16px; padding: 3rem; margin-bottom: 4rem; text-align: center;">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #1e3a8a;">💯 Ehrliche Kommunikation</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: #1e3a8a;">❌ Was ich NICHT verspreche:</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; text-align: left; color: #1e3a8a;">
+                            <li style="margin-bottom: 0.3rem;">• Keine garantierten Reaktionszeiten</li>
+                            <li style="margin-bottom: 0.3rem;">• Keine 24/7-Verfügbarkeit</li>
+                            <li style="margin-bottom: 0.3rem;">• Keine SLA-Garantien</li>
+                            <li style="margin-bottom: 0.3rem;">• Keine festen Rückruf-Zeiten</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: #1e3a8a;">✅ Was ich WIRKLICH biete:</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; text-align: left; color: #1e3a8a;">
+                            <li style="margin-bottom: 0.3rem;">• Direkten Zugang zu meinem Fachwissen</li>
+                            <li style="margin-bottom: 0.3rem;">• Persönlichen Service ohne Call-Center</li>
+                            <li style="margin-bottom: 0.3rem;">• Best-Effort Rückrufe so schnell wie möglich</li>
+                            <li style="margin-bottom: 0.3rem;">• Ehrliche Kommunikation über Verfügbarkeit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expert Access Pakete -->
+            <div class="services-grid">
+                <!-- Bronze Expert Access -->
+                <div class="service-card">
+                    <h3>📞 Bronze Expert Access</h3>
+                    <div class="price">299€/Monat</div>
+                    <div class="price-note">Best-Effort Rückrufe (normalerweise am selben oder nächsten Werktag)</div>
+                    <ul>
+                        <li>2 Stunden Support/Monat inklusive</li>
+                        <li>E-Mail Support</li>
+                        <li>Best-Effort Rückrufe</li>
+                        <li>Zusätzlich: 149€/Stunde</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Bronze Expert Access - Interesse" class="service-button">Expert Access einrichten</a>
+                </div>
+
+                <!-- Silver Expert Access -->
+                <div class="service-card featured">
+                    <h3>📞 Silver Expert Access</h3>
+                    <div class="price">599€/Monat</div>
+                    <div class="price-note">Priorität bei Rückrufen (vor Bronze-Kunden, best effort)</div>
+                    <ul>
+                        <li>4 Stunden Support/Monat inklusive</li>
+                        <li>Hotline + E-Mail</li>
+                        <li>Monatliches Jour Fixe (1 Stunde inklusive)</li>
+                        <li>Zusätzlich: 139€/Stunde</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Silver Expert Access - Interesse" class="service-button featured">Expert Access einrichten</a>
+                </div>
+
+                <!-- Gold Expert Access -->
+                <div class="service-card">
+                    <h3>📞 Gold Expert Access</h3>
+                    <div class="price">999€/Monat</div>
+                    <div class="price-note">Höchste Priorität (vor allen anderen, best effort)</div>
+                    <ul>
+                        <li>8 Stunden Support/Monat inklusive</li>
+                        <li>2 beliebige Kommunikationskanäle*</li>
+                        <li>2-wöchentliches Jour Fixe (45 Min inklusive)</li>
+                        <li>Zusätzlich: 129€/Stunde</li>
+                    </ul>
+                    <div style="background: #f3f4f6; border-radius: 6px; padding: 1rem; margin: 1rem 0; font-size: 0.9rem; color: #6b7280;">
+                        <p style="margin: 0; font-weight: bold;">*Zur Auswahl stehen:</p>
+                        <p style="margin: 0.5rem 0 0 0;">Hotline, E-Mail, WhatsApp, Teams, iMessage<br>
+                        <span style="font-style: italic;">Standard: Hotline + E-Mail (wenn keine Auswahl getroffen)</span></p>
+                    </div>
+                    <a href="mailto:ps@farpoint.tech?subject=Gold Expert Access - Interesse" class="service-button">Expert Access einrichten</a>
+                </div>
+            </div>
+
+            <!-- Emergency Support -->
+            <div style="background: linear-gradient(135deg, #ef4444, #dc2626); color: white; border-radius: 16px; padding: 3rem; margin-top: 4rem; text-align: center;">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: white;">🚨 Emergency Support - Ohne Garantien</h3>
+                <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem;">
+                    Für echte Notfälle - Best-Effort Verfügbarkeit, höchste Priorität
                 </p>
                 
-                <div class="highlight-box">
-                    <div class="highlight-title">🎯 Speziell für gehobene KMU entwickelt</div>
-                    <p>Unsere Assessment Services richten sich an Unternehmen mit 50-200 Mitarbeitern, 
-                    die ihre Microsoft 365 Umgebung professionalisieren oder Compliance-Anforderungen wie NIS2 erfüllen müssen. 
-                    Als Microsoft Expert Level zertifizierter Solution Architect bringe ich die notwendige Expertise mit, 
-                    um auch komplexeste Sicherheitsherausforderungen zu identifizieren und zu lösen.</p>
-                </div>
-
-                <div class="services-grid">
-                    <!-- Service 1.1 -->
-                    <div class="service-card">
-                        <div class="service-icon">🔍</div>
-                        <h3 class="service-title">Microsoft 365 Security Health Check</h3>
-                        <div class="price-tag">999€</div>
-                        <p class="service-description">
-                            Umfassender Sicherheitscheck Ihrer Microsoft 365 Umgebung mit konkreten Handlungsempfehlungen 
-                            zur Verbesserung Ihres Security Scores und der Gesamtsicherheit.
-                        </p>
-                        <ul class="service-features">
-                            <li>Entra ID Security Review mit Conditional Access Analyse</li>
-                            <li>Intune Compliance Check und Device-Policy Bewertung</li>
-                            <li>M365 Best Practice Analysis gegen Microsoft Standards</li>
-                            <li>Secure Score Improvement mit priorisierten Maßnahmen</li>
-                            <li>Vulnerability Assessment und Schwachstellenidentifikation</li>
-                            <li>Executive Summary für die Geschäftsführung</li>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: center;">
+                    <div>
+                        <h4 style="margin-bottom: 1rem; color: #fbbf24;">Was als Notfall gilt:</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; opacity: 0.9;">
+                            <li style="margin-bottom: 0.5rem;">🔥 Server komplett down</li>
+                            <li style="margin-bottom: 0.5rem;">📧 Kompletter E-Mail-Ausfall</li>
+                            <li style="margin-bottom: 0.5rem;">🛡️ Sicherheitsvorfälle</li>
+                            <li style="margin-bottom: 0.5rem;">💻 Systemausfall der gesamten IT</li>
                         </ul>
-                        <a href="mailto:ps@farpoint.tech?subject=Security Health Check Anfrage" class="service-cta">Jetzt buchen</a>
                     </div>
-
-                    <!-- Service 1.2 -->
-                    <div class="service-card">
-                        <div class="service-icon">🤖</div>
-                        <h3 class="service-title">Assessment-Begleitung mit AI-Executive-Reports</h3>
-                        <div class="price-tag">499€</div>
-                        <p class="service-description">
-                            Einzigartige Dienstleistung: AI-generierte Executive Deliverables für Ihre Security Assessments, 
-                            die komplexe technische Ergebnisse in verständliche Geschäftssprache übersetzen.
-                        </p>
-                        <ul class="service-features">
-                            <li>AI-Executive Summary Generation für C-Level</li>
-                            <li>Business Impact Analysis mit ROI-Kalkulationen</li>
-                            <li>Risk Visualization mit professionellen Dashboards</li>
-                            <li>Compliance Mapping zu regulatorischen Anforderungen</li>
-                            <li>Action Plan Generation mit KI-generierten Umsetzungsplänen</li>
-                            <li>PowerBI Dashboard und PowerPoint Präsentation</li>
-                        </ul>
-                        <a href="mailto:ps@farpoint.tech?subject=AI Executive Reports Anfrage" class="service-cta">Angebot anfragen</a>
-                    </div>
-
-                    <!-- Service 1.3 -->
-                    <div class="service-card">
-                        <div class="service-icon">📋</div>
-                        <h3 class="service-title">Compliance Gap-Analyse</h3>
-                        <div class="price-tag">1.199€ Einzeln | 1.999€ Doppelpack</div>
-                        <p class="service-description">
-                            Spezialisierte Analyse für NIS2-Richtlinie und DSGVO-Compliance mit detaillierter Gap-Analyse 
-                            und konkreten Umsetzungsempfehlungen für Ihre Microsoft 365 Umgebung.
-                        </p>
-                        <ul class="service-features">
-                            <li>NIS2-Richtlinie Compliance Assessment</li>
-                            <li>DSGVO/GDPR Compliance Überprüfung</li>
-                            <li>Regulatory Mapping zu M365 Features</li>
-                            <li>Data Governance Review und Klassifizierung</li>
-                            <li>Incident Response Readiness Assessment</li>
-                            <li>Audit-bereite Dokumentation für Zertifizierungen</li>
-                        </ul>
-                        <div class="highlight-box" style="margin: 20px 0; padding: 15px; background: #e8f5e8;">
-                            <strong>💰 Doppelpack-Vorteil:</strong> NIS2 + DSGVO zusammen für 1.999€ (Ersparnis: 399€)
-                        </div>
-                        <a href="mailto:ps@farpoint.tech?subject=Compliance Gap-Analyse Anfrage" class="service-cta">Angebot anfragen</a>
-                    </div>
-
-                    <!-- Service 1.4 -->
-                    <div class="service-card">
-                        <div class="service-icon">📧</div>
-                        <h3 class="service-title">Domain und E-Mail Sicherheitspaket</h3>
-                        <div class="price-tag">799€</div>
-                        <p class="service-description">
-                            Umfassende Analyse und Optimierung der E-Mail-Sicherheit und Domain-Authentifizierung 
-                            zur Erhöhung des Assessment Scores auf mindestens 95%.
-                        </p>
-                        <ul class="service-features">
-                            <li>E-Mail Authentication Protocols (DMARC, SPF, DKIM)</li>
-                            <li>Microsoft Defender for Office 365 Optimierung</li>
-                            <li>Domain Security und DNS-Konfiguration</li>
-                            <li>Mail Flow Analysis und Transport Rules</li>
-                            <li>Assessment Score Optimization (Ziel: 95%+)</li>
-                            <li>Threat Intelligence Integration</li>
-                        </ul>
-                        <div class="highlight-box" style="margin: 20px 0; padding: 15px; background: #fff3cd;">
-                            <strong>⚠️ Wichtiger Hinweis:</strong> Alle Anforderungen aus der Analyse müssen erfüllt werden, 
-                            um einen Assessment Score von mindestens 95% zu erreichen.
-                        </div>
-                        <a href="mailto:ps@farpoint.tech?subject=E-Mail Sicherheitspaket Anfrage" class="service-cta">Jetzt buchen</a>
-                    </div>
-
-                    <!-- Service 1.5 -->
-                    <div class="service-card">
-                        <div class="service-icon">📊</div>
-                        <h3 class="service-title">Microsoft Secure Score Optimierung</h3>
-                        <div class="price-tag">ab 1.499€</div>
-                        <p class="service-description">
-                            Spezialisierte Optimierung des Microsoft Secure Scores mit Fokus auf maximale Punktzahl 
-                            bei minimalen Betriebsunterbrechungen. Ziel: Mindestens 85% Secure Score.
-                        </p>
-                        <ul class="service-features">
-                            <li>Secure Score Deep Analysis aller Empfehlungen</li>
-                            <li>Impact Assessment der Geschäftsauswirkungen</li>
-                            <li>Quick Wins Implementation risikoarmer Verbesserungen</li>
-                            <li>Phased Optimization Plan für komplexere Maßnahmen</li>
-                            <li>Custom Scoring Strategy für Ihre Umgebung</li>
-                            <li>Monitoring Setup für kontinuierliche Überwachung</li>
-                        </ul>
-                        <a href="mailto:ps@farpoint.tech?subject=Secure Score Optimierung Anfrage" class="service-cta">Angebot anfragen</a>
-                    </div>
-
-                    <!-- Service 1.6 - New M365 Komplett Check -->
-                    <div class="service-card">
-                        <div class="service-icon">🔍</div>
-                        <h3 class="service-title">Microsoft 365 Komplett Check</h3>
-                        <div class="price-tag">ab 1.999€</div>
-                        <p class="service-description">
-                            Umfassende Analyse aller kritischen Microsoft 365 Sicherheitsbereiche mit detaillierter 
-                            Bewertung und priorisierten Handlungsempfehlungen für eine ganzheitliche Sicherheitsstrategie.
-                        </p>
-                        <ul class="service-features">
-                            <li>Entra ID Assessment mit Identity Governance Review</li>
-                            <li>Conditional Access Policies Deep Analysis</li>
-                            <li>MFA Configuration und Authentication Strength Check</li>
-                            <li>Device Policies Review (alle Plattformen)</li>
-                            <li>Intune Settings Assessment und Best Practice Alignment</li>
-                            <li>SharePoint Security und Governance Best Practices</li>
-                            <li>Teams Security Configuration und Data Protection</li>
-                            <li>Domain und Exchange Security (DMARC, SPF, DKIM)</li>
-                            <li>Comprehensive Security Score Analysis</li>
-                            <li>Executive Summary mit Business Impact Assessment</li>
-                        </ul>
-                        <div class="highlight-box" style="margin: 20px 0; padding: 15px; background: #e1f5fe;">
-                            <strong>🎯 Ganzheitlicher Ansatz:</strong> Dieser Service kombiniert alle Einzelassessments 
-                            zu einer umfassenden Sicherheitsbewertung Ihrer gesamten Microsoft 365 Umgebung.
-                        </div>
-                        <a href="mailto:ps@farpoint.tech?subject=M365 Komplett Check Anfrage" class="service-cta">Angebot anfragen</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Implementation Services -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Implementation Services</h2>
-                <p class="section-subtitle">
-                    Professionelle Umsetzung und Konfiguration Ihrer Microsoft 365 Sicherheitslösungen
-                </p>
-
-                <div class="services-grid">
-                    <!-- Service 2.1 -->
-                    <div class="service-card">
-                        <div class="service-icon">🔐</div>
-                        <h3 class="service-title">Microsoft Entra ID Professional Setup</h3>
-                        <div class="price-tag">4.999€</div>
-                        <p class="service-description">
-                            Vollständige Implementierung einer sicheren und skalierbaren Identity-Infrastruktur 
-                            basierend auf Microsoft Entra ID mit Daniel's bewährtem Conditional Access Framework.
-                        </p>
-                        <ul class="service-features">
-                            <li>Tenant Architecture Design mit Hybrid-Szenarien</li>
-                            <li>Identity Governance Implementation mit Lifecycle Management</li>
-                            <li>Conditional Access Policies (Daniel's Framework)</li>
-                            <li>Privileged Identity Management (PIM) mit Just-in-Time Access</li>
-                            <li>Multi-Factor Authentication (MFA) Rollout-Strategie</li>
-                            <li>Single Sign-On (SSO) Integration für bis zu 10 Apps</li>
-                            <li>Identity Protection mit Risk-based Policies</li>
-                            <li>Hybrid Identity Setup (Azure AD Connect/Cloud Sync)</li>
-                        </ul>
-                        <div class="highlight-box" style="margin: 20px 0; padding: 15px; background: #e8f5e8;">
-                            <strong>💰 Lizenz-Vorteil:</strong> Bei Kauf von Microsoft 365 Lizenzen über farpoint.tech 
-                            mit mindestens 12 Monaten Laufzeit erhalten Sie 10% Rabatt auf diesen Service.
-                        </div>
-                        <a href="mailto:ps@farpoint.tech?subject=Entra ID Professional Setup Anfrage" class="service-cta">Angebot anfragen</a>
-                    </div>
-
-                    <!-- Service 2.2 -->
-                    <div class="service-card">
-                        <div class="service-icon">📱</div>
-                        <h3 class="service-title">Microsoft Intune Device Management</h3>
-                        <div class="price-individual">Gestaffelte Preise</div>
-                        <p class="service-description">
-                            Professionelle Intune-Implementierung für gemischte Device-Landschaften mit 
-                            OS-spezifischer Preisgestaltung und speziellen Services für Compliance und Remediation.
-                        </p>
+                    
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 2rem;">
+                        <div style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">299€ + 199€/h</div>
+                        <p style="opacity: 0.9; margin-bottom: 1.5rem;">Grundgebühr + Stundensatz</p>
                         
-                        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                            <h4 style="color: #1e3c72; margin-bottom: 15px;">Standard Device Management</h4>
-                            <ul class="service-features" style="margin-bottom: 0;">
-                                <li><strong>Neuer Tenant + 1 OS:</strong> 3.999€</li>
-                                <li><strong>Bestehender Tenant + 1 OS:</strong> 2.999€</li>
-                                <li><strong>Bestehender Tenant erweitern:</strong> 499€ pro OS</li>
-                                <li><strong>MacOS Aufpreis:</strong> +20% auf Gesamtpreis, mindestens 399€</li>
-                            </ul>
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 0.5rem;">📱 Direkte Mobilnummer</p>
+                            <p style="margin-bottom: 0.5rem;">⚡ Best-Effort Verfügbarkeit</p>
+                            <p style="margin-bottom: 0.5rem;">🎯 Höchste Priorität</p>
+                            <p style="margin-bottom: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Keine Garantien, aber ich helfe so schnell ich kann</p>
                         </div>
-
-                        <div style="background: #fff3cd; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                            <h4 style="color: #856404; margin-bottom: 15px;">Compliance & Remediation</h4>
-                            <ul class="service-features" style="margin-bottom: 0;">
-                                <li><strong>Intune Tenant Check:</strong> 249€ (Voraussetzung)</li>
-                                <li><strong>Tenant Cleanup:</strong> Individuelles Angebot</li>
-                                <li><strong>Compliance-Konfiguration:</strong> Individuelles Angebot</li>
-                                <li><strong>Standards:</strong> CIS, TISAX, ISO 27001, NCSC, BSI</li>
-                            </ul>
-                        </div>
-
-                        <ul class="service-features">
-                            <li>Multi-Platform Support (Windows, iOS, Android, macOS)</li>
-                            <li>Windows Autopilot Implementation</li>
-                            <li>Device Enrollment Strategies (Corporate, BYOD, Shared)</li>
-                            <li>Compliance Policies und Configuration Profiles</li>
-                            <li>Application Management und App Protection Policies</li>
-                            <li>Security Baselines und CIS-konforme Konfigurationen</li>
-                        </ul>
-                        <a href="mailto:ps@farpoint.tech?subject=Intune Device Management Anfrage" class="service-cta">Angebot anfragen</a>
-                    </div>
-
-                    <!-- Service 2.3 -->
-                    <div class="service-card">
-                        <div class="service-icon">⚙️</div>
-                        <h3 class="service-title">Intune Primary User Automation</h3>
-                        <div class="price-tag">1.499€</div>
-                        <p class="service-description">
-                            Spezialisierte Lösung zur automatisierten Verwaltung von Primary User Zuweisungen in Microsoft Intune - 
-                            ein einzigartiges Alleinstellungsmerkmal basierend auf proprietärer Expertise.
-                        </p>
-                        <ul class="service-features">
-                            <li>Automated Primary User Assignment mit PowerShell</li>
-                            <li>User Affinity Management mit intelligenten Algorithmen</li>
-                            <li>Bulk Operations für große Device-Bestände</li>
-                            <li>Monitoring und Reporting mit Dashboards</li>
-                            <li>Integration mit HR-Systemen für automatisierte Zuweisungen</li>
-                            <li>Custom Workflows für Unternehmensanforderungen</li>
-                            <li>Training für IT-Administratoren</li>
-                        </ul>
-                        <div class="highlight-box" style="margin: 20px 0; padding: 15px; background: #e1f5fe;">
-                            <strong>🚀 Alleinstellungsmerkmal:</strong> Diese Lösung basiert auf proprietärer Expertise 
-                            und ist in dieser Form einzigartig am Markt verfügbar.
-                        </div>
-                        <a href="mailto:ps@farpoint.tech?subject=Primary User Automation Anfrage" class="service-cta">Angebot anfragen</a>
+                        
+                        <a href="mailto:ps@farpoint.tech?subject=Emergency Support - Information" 
+                           style="background: white; color: #ef4444; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; text-decoration: none;">
+                            Emergency-Nummer anfordern
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Package Deals -->
-        <section id="packages" class="section">
-            <div class="container">
-                <h2 class="section-title">Package Deals</h2>
-                <p class="section-subtitle">
-                    Umfassende Lösungspakete für verschiedene Unternehmensgrößen und Sicherheitsanforderungen
-                </p>
+    <!-- Zurück zu den ursprünglichen Services -->
 
-                <div class="packages-grid">
-                    <!-- Package 1 -->
-                    <div class="package-card">
-                        <h3 class="package-title">Security Foundation</h3>
-                        <div class="package-price">2.999€</div>
-                        <p class="package-price-note">Einmaliger Festpreis</p>
-                        <p class="package-description">
-                            Kosteneffizientes Einstiegspaket für kleine bis mittlere Unternehmen (20-80 Mitarbeiter) 
-                            mit grundlegenden Sicherheitsanforderungen.
-                        </p>
-                        <ul class="package-features">
-                            <li>Microsoft 365 Security Health Check (Wert: 999€)</li>
-                            <li>Domain und E-Mail Sicherheitspaket (Wert: 799€)</li>
-                            <li>Microsoft Secure Score Optimierung (Wert: 1.499€)</li>
-                            <li>Grundlegende Entra ID Konfiguration</li>
-                            <li>Basis Intune Device Policies (1 OS)</li>
-                            <li>Quick Win Implementierung</li>
-                            <li>Security Score Optimierung (Ziel: 80%+)</li>
-                            <li>Benutzer-Awareness-Training (2 Stunden)</li>
-                            <li>30-Tage-Follow-up Support</li>
-                        </ul>
-                        <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 20px 0; text-align: center;">
-                            <strong style="color: #28a745;">💰 Ersparnis: 1.297€ gegenüber Einzelbuchung</strong>
-                        </div>
-                        <a href="mailto:ps@farpoint.tech?subject=Security Foundation Package Anfrage" class="package-cta">Paket buchen</a>
-                    </div>
-
-                    <!-- Package 2 - Featured -->
-                    <div class="package-card featured">
-                        <h3 class="package-title">Compliance Ready</h3>
-                        <div class="package-price">4.999€</div>
-                        <p class="package-price-note">Einmaliger Festpreis</p>
-                        <p class="package-description">
-                            Speziell entwickelt für Unternehmen mit Compliance-Anforderungen (NIS2, DSGVO, Branchenstandards) 
-                            und Audit-Vorbereitung.
-                        </p>
-                        <ul class="package-features">
-                            <li>Compliance Gap-Analyse Doppelpack (NIS2 + DSGVO) (Wert: 1.999€)</li>
-                            <li>Microsoft 365 Security Health Check (Wert: 999€)</li>
-                            <li>Domain und E-Mail Sicherheitspaket (Wert: 799€)</li>
-                            <li>Microsoft Secure Score Optimierung (Wert: 1.499€)</li>
-                            <li>Assessment-Begleitung mit AI-Executive-Reports (Wert: 499€)</li>
-                            <li>Audit-bereite Dokumentation</li>
-                            <li>Policy Templates für Compliance-Frameworks</li>
-                            <li>Incident Response Plan (Grundlagen)</li>
-                            <li>Quarterly Reviews (4 vierteljährliche Reviews)</li>
-                        </ul>
-                        <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 20px 0; text-align: center;">
-                            <strong style="color: #28a745;">💰 Ersparnis: 1.795€ gegenüber Einzelbuchung</strong>
-                        </div>
-                        <a href="mailto:ps@farpoint.tech?subject=Compliance Ready Package Anfrage" class="package-cta">Paket buchen</a>
-                    </div>
-
-                    <!-- Package 3 -->
-                    <div class="package-card">
-                        <h3 class="package-title">Security Excellence</h3>
-                        <div class="package-price">7.999€</div>
-                        <p class="package-price-note">Einmaliger Festpreis</p>
-                        <p class="package-description">
-                            Das umfassendste Paket für sicherheitsbewusste Unternehmen mit erweiterten Anforderungen (50-200 Mitarbeiter) 
-                            und erstklassiger Microsoft 365 Sicherheitsimplementierung.
-                        </p>
-                        <ul class="package-features">
-                            <li>Microsoft Entra ID Professional Setup (Wert: 4.999€)</li>
-                            <li>Microsoft Intune Device Management (2 OS) (Wert: 3.498€)</li>
-                            <li>Microsoft Secure Score Optimierung (Wert: 1.499€)</li>
-                            <li>Assessment-Begleitung mit AI-Executive-Reports (Wert: 499€)</li>
-                            <li>Executive Security Briefing für Geschäftsführung</li>
-                            <li>Advanced Security Training für IT-Teams</li>
-                            <li>Security Playbooks (maßgeschneiderte Incident Response)</li>
-                            <li>6-Monats-Support mit monatlichen Check-ins</li>
-                            <li>Annual Security Review (jährliche Überprüfung)</li>
-                        </ul>
-                        <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 20px 0; text-align: center;">
-                            <strong style="color: #28a745;">💰 Ersparnis: 2.495€ gegenüber Einzelbuchung</strong>
-                        </div>
-                        <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0; text-align: center;">
-                            <strong style="color: #856404;">🎁 Lizenz-Bonus: Zusätzlich 10% Rabatt bei farpoint.tech Lizenzen (12+ Monate)</strong>
-                        </div>
-                        <a href="mailto:ps@farpoint.tech?subject=Security Excellence Package Anfrage" class="package-cta">Paket buchen</a>
-                    </div>
+                <!-- Compliance Gap-Analyse -->
+                <div class="service-card">
+                    <h3>NIS2 & DSGVO Compliance Gap-Analyse</h3>
+                    <div class="price">Einzelpack ab 1.199€ | Doppelpack ab 1.999€</div>
+                    <div class="price-note">Speziell für sicherheitsorientierte KMU</div>
+                    <ul>
+                        <li>NIS2-Richtlinie Compliance-Check (Einzelpack 1.199€)</li>
+                        <li>DSGVO Compliance-Bewertung (Einzelpack 1.199€)</li>
+                        <li>Doppelpack: Beide Analysen für 1.999€ (Ersparnis: 399€)</li>
+                        <li>Gap-Analyse mit konkreten Umsetzungsschritten</li>
+                        <li>Rechtssichere Dokumentation für Auditoren</li>
+                        <li>Priorisierte Roadmap zur Compliance-Erreichung</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Compliance%20Gap%20Analyse%20Anfrage" class="service-button">Compliance-Analyse anfragen</a>
                 </div>
 
-                <!-- Comparison Table -->
-                <div class="comparison-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Service-Kategorie</th>
-                                <th>Security Foundation</th>
-                                <th>Compliance Ready</th>
-                                <th>Security Excellence</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Preis</strong></td>
-                                <td>2.999€</td>
-                                <td>4.999€</td>
-                                <td>7.999€</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Projektdauer</strong></td>
-                                <td>3-4 Tage</td>
-                                <td>5-6 Tage</td>
-                                <td>8-10 Tage</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Zielgruppe</strong></td>
-                                <td>20-80 Mitarbeiter</td>
-                                <td>Compliance-pflichtig</td>
-                                <td>50-200 Mitarbeiter</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Security Health Check</strong></td>
-                                <td><span class="check-mark">✓</span></td>
-                                <td><span class="check-mark">✓</span></td>
-                                <td><span class="check-mark">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>E-Mail Sicherheit</strong></td>
-                                <td><span class="check-mark">✓</span></td>
-                                <td><span class="check-mark">✓</span></td>
-                                <td><span class="check-mark">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Secure Score Optimierung</strong></td>
-                                <td><span class="check-mark">✓</span></td>
-                                <td><span class="check-mark">✓</span></td>
-                                <td><span class="check-mark">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>AI-Executive Reports</strong></td>
-                                <td>-</td>
-                                <td><span class="check-mark">✓</span></td>
-                                <td><span class="check-mark">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Entra ID Professional</strong></td>
-                                <td>Basis</td>
-                                <td>Basis</td>
-                                <td><span class="check-mark">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Intune Device Management</strong></td>
-                                <td>1 OS</td>
-                                <td>-</td>
-                                <td>2 OS</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Compliance Gap-Analyse</strong></td>
-                                <td>-</td>
-                                <td><span class="check-mark">✓</span> (Doppelpack)</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Follow-up Support</strong></td>
-                                <td>30 Tage</td>
-                                <td>Quarterly</td>
-                                <td>6 Monate</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Lizenz-Rabatt verfügbar</strong></td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td><span class="check-mark">✓</span> (10%)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Gesamtersparnis</strong></td>
-                                <td>1.297€</td>
-                                <td>1.795€</td>
-                                <td>2.495€+</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- Domain und E-Mail Sicherheitspaket -->
+                <div class="service-card">
+                    <h3>Domain und E-Mail Sicherheitspaket</h3>
+                    <div class="price">ab 799€</div>
+                    <div class="price-note">Komplette E-Mail-Sicherheit und Assessment Score</div>
+                    <ul>
+                        <li>DMARC, SPF, DKIM Konfiguration und Optimierung</li>
+                        <li>E-Mail-Sicherheitsrichtlinien Implementation</li>
+                        <li>Domain-Sicherheitsanalyse komplett</li>
+                        <li>Assessment Score Bewertung und Verbesserung</li>
+                        <li>Anti-Phishing und Anti-Spoofing Maßnahmen</li>
+                        <li>Monitoring-Setup für kontinuierliche Überwachung</li>
+                    </ul>
+                    <div class="warning-box">
+                        <strong>Wichtiger Hinweis:</strong> Alle Anforderungen aus der Analyse müssen erfüllt werden, um einen Assessment Score von mindestens 95% zu erreichen.
+                    </div>
+                    <a href="mailto:ps@farpoint.tech?subject=Domain%20Email%20Sicherheit%20Anfrage" class="service-button">Sicherheitspaket anfragen</a>
+                </div>
+
+                <!-- Microsoft Secure Score Optimierung -->
+                <div class="service-card">
+                    <h3>Microsoft Secure Score Optimierung</h3>
+                    <div class="price">ab 1.499€</div>
+                    <div class="price-note">Ziel: Mindestens 85% Secure Score</div>
+                    <ul>
+                        <li>Aktuelle Secure Score Analyse und Bewertung</li>
+                        <li>Priorisierte Optimierungsmaßnahmen</li>
+                        <li>Schritt-für-Schritt Implementierungsplan</li>
+                        <li>Risiko-Nutzen-Bewertung aller Empfehlungen</li>
+                        <li>Kontinuierliches Monitoring-Setup</li>
+                        <li>Ziel: Mindestens 85% Secure Score erreichen</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Secure%20Score%20Optimierung%20Anfrage" class="service-button">Score-Optimierung anfragen</a>
+                </div>
+
+                <!-- Microsoft 365 Komplett Check -->
+                <div class="service-card featured">
+                    <h3>Microsoft 365 Komplett Check</h3>
+                    <div class="price">ab 1.999€</div>
+                    <div class="price-note">Ganzheitliche M365 Sicherheitsbewertung</div>
+                    <ul>
+                        <li>Entra ID Assessment mit Identity Governance Review</li>
+                        <li>Conditional Access Policies Deep Analysis</li>
+                        <li>MFA Configuration und Authentication Strength Check</li>
+                        <li>Device Policies Review (alle Plattformen)</li>
+                        <li>Intune Settings Assessment und Best Practice Alignment</li>
+                        <li>SharePoint Security und Governance Best Practices</li>
+                        <li>Teams Security Configuration und Data Protection</li>
+                        <li>Domain und Exchange Security (DMARC, SPF, DKIM)</li>
+                        <li>Comprehensive Security Score Analysis</li>
+                        <li>Executive Summary mit Business Impact Assessment</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=M365%20Komplett%20Check%20Anfrage" class="service-button featured">Komplett Check anfragen</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
-        <!-- About Section -->
-        <section id="about" class="section about-section">
-            <div class="container">
-                <h2 class="section-title" style="color: white;">Über Philipp Schmidt</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">
-                    Microsoft Expert Level Solution Architect mit über 20 Jahren Expertise in Enterprise IT-Sicherheit
-                </p>
-
-                <div class="about-content">
-                    <div class="about-card">
-                        <div class="about-icon">🎓</div>
-                        <h3>Expert Level Zertifizierungen</h3>
-                        <p>
-                            Als einer der wenigen Microsoft Expert Level zertifizierten Solution Architects in der DACH-Region 
-                            bringe ich die höchste verfügbare Microsoft-Zertifizierungsstufe mit. Diese Expertise ermöglicht 
-                            es mir, auch komplexeste Microsoft 365 Sicherheitsherausforderungen zu lösen.
-                        </p>
+    <!-- Implementation Services -->
+    <section class="services" style="background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Implementation Services</h2>
+            <div class="services-grid">
+                <!-- Microsoft Entra ID Professional Setup -->
+                <div class="service-card">
+                    <h3>Microsoft Entra ID Professional Setup</h3>
+                    <div class="price">ab 4.999€</div>
+                    <div class="price-note">Komplette Identity & Access Management Lösung</div>
+                    <ul>
+                        <li>Entra ID Tenant Design und Implementierung</li>
+                        <li>SSO-Implementierungen (SAML, SCIM)</li>
+                        <li>Conditional Access und moderne Authentifizierung</li>
+                        <li>Privileged Identity Management (PIM) Setup</li>
+                        <li>Daniel's Conditional Access Framework Integration</li>
+                        <li>Identity Governance und Lifecycle Management</li>
+                        <li>Multi-Factor Authentication (MFA) Optimierung</li>
+                    </ul>
+                    <div class="warning-box">
+                        <strong>Lizenz-Vorteil:</strong> Bei Lizenzkauf über farpoint.tech mit mindestens 12 Monaten Laufzeit erhalten Sie 10% Rabatt auf diesen Service.
                     </div>
-                    
-                    <div class="about-card">
-                        <div class="about-icon">🏢</div>
-                        <h3>KMU-Spezialisierung</h3>
-                        <p>
-                            Meine Services sind speziell auf gehobene KMU mit 50-200 Mitarbeitern zugeschnitten. 
-                            Ich verstehe die Herausforderungen von Unternehmen mit einem internen IT-Support und 
-                            biete als externer Berater die notwendige Expertise für moderne Sicherheitsanforderungen.
-                        </p>
-                    </div>
-                    
-                    <div class="about-card">
-                        <div class="about-icon">🛡️</div>
-                        <h3>Compliance-Fokus</h3>
-                        <p>
-                            Mit der NIS2-Richtlinie und anderen regulatorischen Anforderungen steigt der Compliance-Druck 
-                            auf KMU erheblich. Meine Services sind darauf ausgelegt, diese Anforderungen effizient und 
-                            kosteneffektiv zu erfüllen, ohne die Produktivität zu beeinträchtigen.
-                        </p>
-                    </div>
+                    <a href="mailto:ps@farpoint.tech?subject=Entra%20ID%20Setup%20Anfrage" class="service-button">Entra ID Setup anfragen</a>
                 </div>
 
+                <!-- Microsoft Intune Device Management -->
+                <div class="service-card">
+                    <h3>Microsoft Intune Device Management</h3>
+                    <div class="price">Neuer Tenant + 1 OS: ab 3.999€<br>Bestehender Tenant + 1 OS: ab 2.999€</div>
+                    <div class="price-note">Beispiel: Windows + iOS | MacOS Aufpreis: +20%, mindestens 399€</div>
+                    <ul>
+                        <li>Komplette Intune Tenant Konfiguration</li>
+                        <li>Device Enrollment und Autopilot Setup</li>
+                        <li>Compliance Policies für alle Plattformen</li>
+                        <li>App Management und Deployment</li>
+                        <li>Security Baselines Implementation</li>
+                        <li>Jedes weitere OS: +499€ Aufpreis</li>
+                        <li>MacOS Aufpreis: +20% auf Gesamtpreis, mindestens 399€</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Intune%20Device%20Management%20Anfrage" class="service-button">Intune Setup anfragen</a>
+                </div>
+
+                <!-- Intune Primary User Automation -->
+                <div class="service-card featured">
+                    <h3>Intune Primary User Automation</h3>
+                    <div class="price">ab 1.499€</div>
+                    <div class="price-note">Einzigartiges Alleinstellungsmerkmal</div>
+                    <ul>
+                        <li>Automatische Primary User Zuweisung</li>
+                        <li>Intelligente Device-User Mapping</li>
+                        <li>Reduzierung manueller Administrationsaufgaben</li>
+                        <li>Verbesserte Compliance und Reporting</li>
+                        <li>Optimierte User Experience</li>
+                        <li>Kontinuierliche Automatisierung und Monitoring</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Primary%20User%20Automation%20Anfrage" class="service-button featured">Automation anfragen</a>
+                </div>
+            </div>
+
+            <!-- Intune Compliance & Remediation Services -->
+            <h3 style="text-align: center; color: #1e3a8a; margin: 3rem 0 2rem;">Intune Compliance & Remediation Services</h3>
+            <div class="services-grid">
+                <!-- Intune Tenant Check -->
+                <div class="service-card">
+                    <h3>Intune Tenant Check</h3>
+                    <div class="price">249€</div>
+                    <div class="price-note">Voraussetzung für Cleanup/Compliance-Services</div>
+                    <ul>
+                        <li>Umfassende Intune Tenant Analyse (0,5 Tage)</li>
+                        <li>Identifikation von Konfigurationskonflikten</li>
+                        <li>Bewertung verwaister Einstellungen</li>
+                        <li>Compliance-Lücken Assessment</li>
+                        <li>Performance-Problem Identifikation</li>
+                        <li>Detaillierter Bewertungsbericht mit Empfehlungen</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Intune%20Tenant%20Check%20Anfrage" class="service-button">Tenant Check buchen</a>
+                </div>
+
+                <!-- Intune Tenant Cleanup/Remediation -->
+                <div class="service-card">
+                    <h3>Intune Tenant Cleanup/Remediation</h3>
+                    <div class="price">Individuelles Angebot auf Anfrage</div>
+                    <div class="price-note">Für Tenants mit Fehlkonfigurationen</div>
+                    <ul>
+                        <li>Bereinigung von Konfigurationskonflikten</li>
+                        <li>Entfernung verwaister Policies und Einstellungen</li>
+                        <li>Optimierung der Tenant-Struktur</li>
+                        <li>Performance-Verbesserungen</li>
+                        <li>Dokumentation aller Änderungen</li>
+                        <li>Voraussetzung: Intune Tenant Check (249€)</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Intune%20Cleanup%20Anfrage" class="service-button">Cleanup anfragen</a>
+                </div>
+
+                <!-- Intune Compliance-Konfiguration -->
+                <div class="service-card">
+                    <h3>Intune Compliance-Konfiguration</h3>
+                    <div class="price">Individuelles Angebot auf Anfrage</div>
+                    <div class="price-note">CIS, TISAX, ISO 27001, NCSC, BSI IT-Grundschutz</div>
+                    <ul>
+                        <li>Compliance-Standards: CIS, TISAX, ISO 27001</li>
+                        <li>NCSC und BSI IT-Grundschutz Implementierung</li>
+                        <li>Maßgeschneiderte Compliance-Policies</li>
+                        <li>Audit-bereite Dokumentation</li>
+                        <li>Kontinuierliches Compliance-Monitoring</li>
+                        <li>Voraussetzung: Intune Tenant Check (249€)</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Intune%20Compliance%20Anfrage" class="service-button">Compliance anfragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Package Deals -->
+    <section class="packages">
+        <div class="container">
+            <h2 class="section-title">Package Deals</h2>
+            <div class="package-grid">
+                <!-- Security Foundation Package -->
+                <div class="package-card">
+                    <h3>Security Foundation Package</h3>
+                    <div class="package-price">ab 2.999€</div>
+                    <div class="package-subtitle">Perfekter Einstieg für sicherheitsorientierte KMU</div>
+                    <ul>
+                        <li>Microsoft 365 Security Health Check (Wert: 999€)</li>
+                        <li>Domain und E-Mail Sicherheitspaket (Wert: 799€)</li>
+                        <li>Secure Score Optimierung (Wert: 1.499€)</li>
+                        <li>3-Monats-Support mit monatlichen Check-ins</li>
+                        <li>Gesamtwert: 3.297€ - Sie sparen: 298€</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Security%20Foundation%20Package%20Anfrage" class="service-button">Foundation Package anfragen</a>
+                </div>
+
+                <!-- Compliance Ready Package -->
+                <div class="package-card featured">
+                    <h3>Compliance Ready Package</h3>
+                    <div class="package-price">ab 4.999€</div>
+                    <div class="package-subtitle">Speziell für NIS2 und TISAX Anforderungen</div>
+                    <ul>
+                        <li>Microsoft 365 Komplett Check (Wert: 1.999€)</li>
+                        <li>NIS2 & DSGVO Compliance Doppelpack (Wert: 1.999€)</li>
+                        <li>AI-Executive-Reports (Wert: 499€)</li>
+                        <li>Intune Tenant Check (Wert: 249€)</li>
+                        <li>6-Monats-Support mit monatlichen Check-ins (nach Aufwand)</li>
+                        <li>Gesamtwert: 4.746€ - Sie sparen: 247€</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=Compliance%20Ready%20Package%20Anfrage" class="service-button featured">Compliance Package anfragen</a>
+                </div>
+
+                <!-- Security Excellence Package -->
+                <div class="package-card">
+                    <h3>Security Excellence Package</h3>
+                    <div class="package-price">ab 8.999€</div>
+                    <div class="package-subtitle">Vollständige M365 Security Transformation</div>
+                    <ul>
+                        <li>Microsoft Entra ID Professional Setup (Wert: 4.999€)</li>
+                        <li>Microsoft Intune Device Management (2 OS) (Wert: 3.498€)</li>
+                        <li>Microsoft 365 Komplett Check (Wert: 1.999€)</li>
+                        <li>Primary User Automation (Wert: 1.499€)</li>
+                        <li>6-Monats-Support mit monatlichen Check-ins (nach Aufwand)</li>
+                        <li>Auf Wunsch: Annual Security Review (jährliche Überprüfung) mit Rabatt</li>
+                        <li>Gesamtwert: 11.995€ - Sie sparen: 2.996€</li>
+                    </ul>
+                    <div class="warning-box">
+                        <strong>Lizenz-Vorteil:</strong> Bei Lizenzkauf über farpoint.tech mit mindestens 12 Monaten Laufzeit erhalten Sie zusätzlich 10% Rabatt.
+                    </div>
+                    <a href="mailto:ps@farpoint.tech?subject=Security%20Excellence%20Package%20Anfrage" class="service-button">Excellence Package anfragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- M365 SuperAdmin Masterclass -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">M365 SuperAdmin Masterclass</h2>
+            <div class="services-grid">
+                <div class="service-card featured" style="max-width: 800px; margin: 0 auto;">
+                    <h3>Exklusive Masterclass für M365-Profis</h3>
+                    <div class="price">ab 4.999€</div>
+                    <div class="price-note">All-inclusive: Workshop vor Ort + Online-Betreuung</div>
+                    <p style="margin-bottom: 1.5rem;">In dieser exklusiven Masterclass heben wir die Verwaltung deines Microsoft 365 Tenants auf das nächste Level. Lerne, wie du mit einer Auswahl an mächtigen, oft unbekannten Tools und Automatisierungen deinen Tenant in den „Supermodus" versetzt. Nach dem Training bist du in der Lage, sämtliche administrativen Aufgaben nicht nur effizienter, sondern auch mit maximaler Kontrolle und Sicherheit zu erledigen – und das mit jeder Menge Automatisierungspotenzial.</p>
+                    <ul>
+                        <li>Volle Kontrolle über deinen M365 Tenant</li>
+                        <li>Effiziente, automatisierte Prozesse</li>
+                        <li>Exklusive Einblicke in Profi-Tools und Best Practices</li>
+                        <li>Praxistipps, die sofort anwendbar sind</li>
+                        <li>Workshop vor Ort + weiterführende Online-Betreuung</li>
+                        <li>All-inclusive Paket</li>
+                        <li>Werde zum SuperAdmin – bereit für jede Herausforderung!</li>
+                    </ul>
+                    <a href="mailto:ps@farpoint.tech?subject=M365%20SuperAdmin%20Masterclass%20Anfrage" class="service-button featured">Masterclass anfragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Über Philipp Schmidt</h2>
+                    <p>Erfahrener Microsoft 365 Solution Architect mit über 20 Jahren IT-Expertise, spezialisiert auf die Implementierung und Absicherung moderner Arbeitsplatzumgebungen für sicherheitsorientierte KMU. Experte für Zero Trust Security-Architekturen und sichere Transformation zu Modern Workplace-Lösungen.</p>
+                    <p>Als externer Berater unterstütze ich Unternehmen mit etwa einer internen IT-Support-Person dabei, ihre Microsoft 365 Umgebung professionell zu implementieren und zu sichern. Mein Fokus liegt auf Unternehmen, die Wert auf Sicherheit legen oder aufgrund von Regulierungen wie NIS2 entsprechende Anforderungen erfüllen müssen.</p>
+                    <p><strong>Branchen-Expertise:</strong> Automotive, Produktionsbetriebe, IT-Dienstleister, Mittelstand, Pharma/Medical, Personaldienstleistungen</p>
+                    <p><strong>Verfügbarkeit:</strong> Remote und On-Site, flexibel innerhalb DACH-Region</p>
+                </div>
                 <div class="certifications">
-                    <div class="cert-badge">Microsoft Cybersecurity Architect Expert (SC-100)</div>
-                    <div class="cert-badge">Microsoft 365 Enterprise Administrator Expert (MS-100, MS-101)</div>
-                    <div class="cert-badge">Identity and Access Administrator Associate (SC-300)</div>
-                    <div class="cert-badge">Endpoint Administrator Associate (MD-102)</div>
-                    <div class="cert-badge">AWS Certified Solutions Architect – Associate</div>
-                    <div class="cert-badge">ITIL v3 Foundation</div>
-                </div>
-
-                <div class="highlight-box" style="background: rgba(255,255,255,0.1); border-left-color: #ff6b35;">
-                    <div class="highlight-title" style="color: white;">🌍 Internationale Expertise</div>
-                    <p style="color: rgba(255,255,255,0.9);">
-                        Neben der DACH-Region unterstütze ich auch Unternehmen in den Niederlanden und anderen 
-                        europäischen Märkten. Meine Expertise in internationalen Compliance-Standards wie TISAX, 
-                        ISO 27001 und NIS2 macht mich zum idealen Partner für grenzüberschreitende Projekte.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing & Booking Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Preisübersicht & Buchung</h2>
-                <p class="section-subtitle">
-                    Transparente Festpreise für planbare Budgets - speziell für gehobene KMU entwickelt
-                </p>
-
-                <div class="highlight-box">
-                    <div class="highlight-title">💡 Warum transparente Festpreise?</div>
-                    <p>
-                        Alle Preise verstehen sich als Festpreise inklusive aller Leistungen. Es entstehen keine versteckten 
-                        Kosten oder zusätzlichen Aufwände. Die Preisgestaltung ist speziell auf gehobene KMU ausgerichtet, 
-                        die Wert auf Sicherheit legen oder aufgrund von Regulierungen wie NIS2 investieren müssen.
-                    </p>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px;">
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                        <h3 style="color: #1e3c72; margin-bottom: 20px;">🚀 Sofortbuchung verfügbar</h3>
-                        <ul style="list-style: none; color: #666;">
-                            <li style="padding: 8px 0; border-left: 3px solid #28a745; padding-left: 15px; margin-bottom: 10px;">
-                                Microsoft 365 Security Health Check (999€)
-                            </li>
-                            <li style="padding: 8px 0; border-left: 3px solid #28a745; padding-left: 15px; margin-bottom: 10px;">
-                                Domain und E-Mail Sicherheitspaket (799€)
-                            </li>
-                            <li style="padding: 8px 0; border-left: 3px solid #28a745; padding-left: 15px; margin-bottom: 10px;">
-                                Microsoft Secure Score Optimierung (1.499€)
-                            </li>
-                            <li style="padding: 8px 0; border-left: 3px solid #28a745; padding-left: 15px; margin-bottom: 10px;">
-                                Security Foundation Package (2.999€)
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                        <h3 style="color: #1e3c72; margin-bottom: 20px;">💬 Beratungsgespräch erforderlich</h3>
-                        <ul style="list-style: none; color: #666;">
-                            <li style="padding: 8px 0; border-left: 3px solid #ff6b35; padding-left: 15px; margin-bottom: 10px;">
-                                Alle Implementation Services ab 2.999€
-                            </li>
-                            <li style="padding: 8px 0; border-left: 3px solid #ff6b35; padding-left: 15px; margin-bottom: 10px;">
-                                Compliance Gap-Analysen
-                            </li>
-                            <li style="padding: 8px 0; border-left: 3px solid #ff6b35; padding-left: 15px; margin-bottom: 10px;">
-                                Packages ab 4.999€
-                            </li>
-                            <li style="padding: 8px 0; border-left: 3px solid #ff6b35; padding-left: 15px; margin-bottom: 10px;">
-                                Individuelle Anpassungen
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div style="background: #f8f9fa; padding: 40px; border-radius: 15px; margin-top: 50px;">
-                    <h3 style="color: #1e3c72; margin-bottom: 20px; text-align: center;">💰 Lizenz-Rabatt-System</h3>
-                    <p style="text-align: center; margin-bottom: 30px; color: #666;">
-                        Profitieren Sie von attraktiven Rabatten bei Microsoft 365 Lizenzkäufen über farpoint.tech
-                    </p>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; color: #ff6b35; font-weight: bold;">10%</div>
-                            <div style="color: #666;">Rabatt auf Services</div>
-                            <div style="font-size: 0.9rem; color: #888;">bei 12+ Monaten Laufzeit</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; color: #ff6b35; font-weight: bold;">✓</div>
-                            <div style="color: #666;">Gilt für</div>
-                            <div style="font-size: 0.9rem; color: #888;">Entra ID Setup & Security Excellence</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; color: #ff6b35; font-weight: bold;">+</div>
-                            <div style="color: #666;">Kombinierbar</div>
-                            <div style="font-size: 0.9rem; color: #888;">mit Package-Ersparnissen</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="background: white; padding: 40px; border-radius: 15px; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #1e3c72; margin-bottom: 20px; text-align: center;">💳 Zahlungskonditionen</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                        <div style="text-align: center; padding: 20px; border: 2px solid #e9ecef; border-radius: 10px;">
-                            <div style="font-weight: bold; color: #1e3c72; margin-bottom: 10px;">Kleinere Services</div>
-                            <div style="color: #666; margin-bottom: 10px;">bis 1.999€</div>
-                            <div style="font-size: 0.9rem; color: #888;">Zahlung vor Projektbeginn</div>
-                        </div>
-                        <div style="text-align: center; padding: 20px; border: 2px solid #e9ecef; border-radius: 10px;">
-                            <div style="font-weight: bold; color: #1e3c72; margin-bottom: 10px;">Mittlere Services</div>
-                            <div style="color: #666; margin-bottom: 10px;">2.000€ - 5.999€</div>
-                            <div style="font-size: 0.9rem; color: #888;">50% Anzahlung, 50% bei Abschluss</div>
-                        </div>
-                        <div style="text-align: center; padding: 20px; border: 2px solid #e9ecef; border-radius: 10px;">
-                            <div style="font-weight: bold; color: #1e3c72; margin-bottom: 10px;">Größere Projekte</div>
-                            <div style="color: #666; margin-bottom: 10px;">ab 6.000€</div>
-                            <div style="font-size: 0.9rem; color: #888;">30% / 40% / 30% Staffelung</div>
-                        </div>
-                    </div>
+                    <h3>Zertifizierungen</h3>
+                    <ul class="cert-list">
+                        <li><strong>Microsoft Expert Level:</strong> Cybersecurity Architect Expert, Enterprise Administrator Expert</li>
+                        <li><strong>Microsoft Associate Level:</strong> Identity and Access Administrator, Endpoint Administrator</li>
+                        <li><strong>AWS:</strong> Certified Solution Architect - Associate</li>
+                        <li><strong>ITIL:</strong> V3 Foundation</li>
+                    </ul>
+                    <h3 style="margin-top: 2rem;">Kernkompetenzen</h3>
+                    <ul class="cert-list">
+                        <li>Identity & Access Management (Entra ID)</li>
+                        <li>Device Management (Microsoft Intune)</li>
+                        <li>Security (Microsoft Defender Suite)</li>
+                        <li>Zero Trust Security-Architekturen</li>
+                        <li>Compliance (TISAX, ISO 27001, BSI, NIS2)</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FAQ Section -->
-        <section class="section" style="background: #f8f9fa;">
-            <div class="container">
-                <h2 class="section-title">Häufig gestellte Fragen</h2>
-                <p class="section-subtitle">
-                    Antworten auf die wichtigsten Fragen zu unseren Microsoft 365 Security Services
-                </p>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-top: 50px;">
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                        <h3 style="color: #1e3c72; margin-bottom: 15px;">Wie funktionieren die AI-Executive-Reports?</h3>
-                        <p style="color: #666; line-height: 1.7;">
-                            Die AI-Executive-Reports nutzen moderne KI-Technologie, um komplexe technische Assessment-Ergebnisse 
-                            automatisch in verständliche Geschäftssprache zu übersetzen. Sie erhalten professionelle 
-                            PowerPoint-Präsentationen, Executive Dashboards und Business Cases, die direkt für 
-                            C-Level-Präsentationen geeignet sind.
-                        </p>
-                    </div>
-
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                        <h3 style="color: #1e3c72; margin-bottom: 15px;">Warum kostet macOS mehr?</h3>
-                        <p style="color: #666; line-height: 1.7;">
-                            macOS Device Management erfordert spezielle Expertise und zusätzliche Konfigurationsschritte, 
-                            die über Standard-Windows-Deployments hinausgehen. Der 20% Aufpreis reflektiert den erhöhten 
-                            Aufwand für Apple-spezifische Sicherheits- und Management-Features.
-                        </p>
-                    </div>
-
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                        <h3 style="color: #1e3c72; margin-bottom: 15px;">Wie funktioniert der Lizenz-Rabatt?</h3>
-                        <p style="color: #666; line-height: 1.7;">
-                            Bei Kauf von Microsoft 365 Lizenzen über farpoint.tech mit mindestens 12 Monaten Laufzeit 
-                            erhalten Sie 10% Rabatt auf ausgewählte Services. Der Rabatt wird direkt auf den Service-Preis 
-                            gewährt und ist mit Package-Ersparnissen kombinierbar.
-                        </p>
-                    </div>
-
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                        <h3 style="color: #1e3c72; margin-bottom: 15px;">Was passiert, wenn der 95% Assessment Score nicht erreicht wird?</h3>
-                        <p style="color: #666; line-height: 1.7;">
-                            Beim Domain und E-Mail Sicherheitspaket ist wichtig zu verstehen: Alle Anforderungen aus der 
-                            Analyse müssen erfüllt werden, um einen Assessment Score von mindestens 95% zu erreichen. Ich liefere die 
-                            Analyse und Empfehlungen - die Umsetzung liegt beim Kunden.
-                        </p>
-                    </div>
-
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                        <h3 style="color: #1e3c72; margin-bottom: 15px;">Welche Bereiche werden abgedeckt?</h3>
-                        <p style="color: #666; line-height: 1.7;">
-                            • <strong>Microsoft Intune</strong> – Device Management und Protection (alle Plattformen)<br>
-                            • <strong>Entra ID</strong> – Identitäten und Zugriffskontrolle mit Daniel's CA Framework<br>
-                            • <strong>Microsoft 365 Security</strong> – Best Practice Konfigurationen<br>
-                            • <strong>Secure Score Optimierung</strong> – Maximierung der Microsoft Security Bewertung<br>
-                            • <strong>Compliance</strong> – NIS2, DSGVO und andere regulatorische Anforderungen
-                        </p>
-                    </div>
-
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                        <h3 style="color: #1e3c72; margin-bottom: 15px;">Warum ist der Intune Tenant Check notwendig?</h3>
-                        <p style="color: #666; line-height: 1.7;">
-                            Jeder Intune-Tenant ist einzigartig und hat seine eigene "Geschichte" von Konfigurationen, 
-                            Änderungen und Anpassungen. Über die Zeit entstehen oft:
-                            <br><br>
-                            <strong>• Konfigurationskonflikte</strong> zwischen verschiedenen Policies<br>
-                            <strong>• Verwaiste Einstellungen</strong> aus früheren Implementierungen<br>
-                            <strong>• Inkonsistente Sicherheitsrichtlinien</strong> durch verschiedene Administratoren<br>
-                            <strong>• Compliance-Lücken</strong> durch veraltete Standards<br>
-                            <strong>• Performance-Probleme</strong> durch redundante Konfigurationen
-                            <br><br>
-                            Ohne eine gründliche Analyse (Tenant Check für 249€) ist es unmöglich, ein faires und 
-                            realistisches Angebot für Cleanup- oder Compliance-Services zu erstellen. Der Check 
-                            stellt sicher, dass Sie ein maßgeschneidertes Angebot erhalten, das Ihren spezifischen 
-                            Herausforderungen entspricht.
-                        </p>
-                    </div>
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Häufig gestellte Fragen</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Warum ist der Intune Tenant Check notwendig?</div>
+                <div class="faq-answer">
+                    <p>Der Intune Tenant Check ist essentiell, um die Komplexität und den Zustand Ihres bestehenden Tenants zu verstehen. Häufige Probleme sind:</p>
+                    <ul>
+                        <li><strong>Konfigurationskonflikte:</strong> Verschiedene Policies können sich gegenseitig beeinträchtigen</li>
+                        <li><strong>Verwaiste Einstellungen:</strong> Alte Konfigurationen aus früheren Implementierungen</li>
+                        <li><strong>Inkonsistente Sicherheitsrichtlinien:</strong> Durch verschiedene Administratoren über die Zeit</li>
+                        <li><strong>Compliance-Lücken:</strong> Veraltete Standards oder unvollständige Implementierungen</li>
+                        <li><strong>Performance-Probleme:</strong> Redundante oder konfliktäre Konfigurationen</li>
+                    </ul>
+                    <p>Ohne diese Analyse können Cleanup- oder Compliance-Projekte unvorhersehbare Auswirkungen haben und deutlich länger dauern als geplant.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2 class="section-title" style="color: white;">Bereit für sichere Microsoft 365 Umgebungen?</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">
-                    Lassen Sie uns Ihre Microsoft 365 Sicherheit auf das nächste Level bringen
-                </p>
+            <div class="faq-item">
+                <div class="faq-question">Wie technisch sind die Workshops?</div>
+                <div class="faq-answer">Die Workshops basieren auf Ihrer spezifischen Umgebung. Wir gehen technisch in die Tiefe, aber mit Fokus auf Geschäftswert und was Sinn macht. Sowohl IT-Manager als auch Management können teilnehmen.</div>
+            </div>
 
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-icon">📧</div>
-                        <h3>E-Mail Kontakt</h3>
-                        <p style="margin-bottom: 15px;">ps@farpoint.tech</p>
-                        <p style="font-size: 0.9rem; opacity: 0.8;">Reaktionszeit: Innerhalb von 24 Stunden</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">Passt das zu unserer Unternehmensgröße?</div>
+                <div class="faq-answer">Die Services sind besonders relevant für sicherheitsorientierte KMU aller Größen, die Microsoft 365 nutzen, können aber an kleinere und größere Setups angepasst werden.</div>
+            </div>
 
-                    <div class="contact-info">
-                        <div class="contact-icon">🌐</div>
-                        <h3>Online Präsenz</h3>
-                        <p style="margin-bottom: 15px;">easym365.de</p>
-                        <p style="font-size: 0.9rem; opacity: 0.8;">LinkedIn: Philipp Schmidt</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">Wie viel Zeit erfordert das von uns?</div>
+                <div class="faq-answer">Es beginnt mit einem 30-minütigen Meeting. Die Workshops dauern zwischen 4 und 8 Stunden je nach Setup. Den Rest übernehme ich und Sie erhalten anschließend einen leicht verständlichen Bericht.</div>
+            </div>
 
-                    <div class="contact-info">
-                        <div class="contact-icon">🗺️</div>
-                        <h3>Verfügbarkeit</h3>
-                        <p style="margin-bottom: 15px;">DACH-Region & Niederlande</p>
-                        <p style="font-size: 0.9rem; opacity: 0.8;">Remote & On-Site Services</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: 50px; text-align: center;">
-                    <a href="mailto:ps@farpoint.tech?subject=Kostenlose Erstberatung Anfrage" class="cta-primary" style="margin-right: 20px;">
-                        Kostenlose Erstberatung (30 Min)
-                    </a>
-                    <a href="mailto:ps@farpoint.tech?subject=Security Health Check Buchung" class="cta-secondary">
-                        Security Health Check buchen
-                    </a>
-                </div>
-
-                <div style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
-                    <h3 style="color: white; margin-bottom: 20px; text-align: center;">Kostenlose Erstberatung (30 Minuten)</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
-                        <div>
-                            <div style="font-size: 1.5rem; margin-bottom: 10px;">🔍</div>
-                            <div style="color: rgba(255,255,255,0.9);">Analyse Ihrer aktuellen Situation</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 1.5rem; margin-bottom: 10px;">💡</div>
-                            <div style="color: rgba(255,255,255,0.9);">Empfehlung passender Services</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 1.5rem; margin-bottom: 10px;">📋</div>
-                            <div style="color: rgba(255,255,255,0.9);">Klärung spezifischer Anforderungen</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 1.5rem; margin-bottom: 10px;">💰</div>
-                            <div style="color: rgba(255,255,255,0.9);">Unverbindliches Angebot</div>
-                        </div>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">Was bekommen wir konkret heraus?</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Mapping Ihrer aktuellen Sicherheit</li>
+                        <li>Identifizierte Risiken und Fehlkonfigurationen</li>
+                        <li>Konkrete Empfehlungen und Vorschläge für nächste Schritte</li>
+                        <li>Einen Bericht, den Sie intern verwenden können</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </main>
+
+            <div class="faq-item">
+                <div class="faq-question">Was ist, wenn wir bereits hohe Sicherheit haben?</div>
+                <div class="faq-answer">Dann nutzen wir die Zeit, um das zu bestätigen, Ihnen Inspiration zu geben und sicherzustellen, dass es keine übersehenen blinden Flecken gibt. Viele Menschen bekommen trotzdem neue Einsichten und Ideen mit nach Hause.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Welche Bereiche werden wir abdecken?</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Microsoft Intune – Device Management und Protection</li>
+                        <li>Entra ID (ehemals Azure AD) - Identitäten und Zugriffskontrolle</li>
+                        <li>Defender XDR Produkte (z.B. MDE, MDA, MDO)</li>
+                        <li>Microsoft Purview und dessen Wert in der Umgebung</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Bereit für den nächsten Schritt?</h2>
+            <p>Kontaktieren Sie mich für ein unverbindliches Gespräch über Ihre Microsoft 365 Anforderungen.</p>
+            <a href="mailto:ps@farpoint.tech?subject=Kontaktanfrage%20easym365" class="contact-button">Jetzt Kontakt aufnehmen</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p><strong>easym365.de</strong> - Microsoft 365 Solution Architect & Security Specialist</p>
-            <p>Philipp Schmidt | ps@farpoint.tech | Alle Rechte vorbehalten</p>
-            <p style="font-size: 0.8rem; margin-top: 20px;">
-                Alle Preise verstehen sich zzgl. der gesetzlichen Mehrwertsteuer. Änderungen und Irrtümer vorbehalten. 
-                Die Services werden als Freelancer-Dienstleistung erbracht.
-            </p>
-            <p style="font-size: 0.8rem; margin-top: 10px;">
-                Letzte Aktualisierung: 24. Juli 2025 | Version: V1.0 | Autor: Philipp Schmidt
-            </p>
+            <p>&copy; 2025 Philipp Schmidt - Microsoft 365 Solution Architect & Security Specialist</p>
+            <p>E-Mail: ps@farpoint.tech | Spezialisiert auf sicherheitsorientierte KMU</p>
         </div>
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+    <button class="scroll-top" onclick="scrollToTop()">↑</button>
 
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
-        // Header scroll effect
+        // Show/hide scroll to top button
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                scrollTop.classList.remove('visible');
             }
-
-            // Show/hide scroll to top button
-            const scrollButton = document.querySelector('.scroll-to-top');
-            if (scrollTop > 300) {
-                scrollButton.classList.add('visible');
-            } else {
-                scrollButton.classList.remove('visible');
-            }
-        });
-
-        // Animate cards on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe service cards and package cards
-        document.querySelectorAll('.service-card, .package-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
         });
 
         // Scroll to top function
@@ -1633,19 +1148,25 @@
             });
         }
 
-        // Mobile menu toggle (basic implementation)
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const nav = document.querySelector('.nav');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                
+                // Toggle current answer
+                answer.style.display = isOpen ? 'none' : 'block';
+            });
         });
 
-        // Add loading animation
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease';
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
+        // Initialize FAQ - hide all answers
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
         });
     </script>
 </body>
